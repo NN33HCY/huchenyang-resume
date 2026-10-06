@@ -1,0 +1,60 @@
+:root {
+  --banma-background: #05080c;
+  --banma-foreground: #f0f9ff;
+  --banma-card: #0b1218;
+  --banma-card-foreground: #f0f9ff;
+  --banma-popover: #0b1218;
+  --banma-popover-foreground: #f0f9ff;
+  --banma-primary: #2dd4bf;
+  --banma-primary-foreground: #020617;
+  --banma-secondary: #111827;
+  --banma-secondary-foreground: #e2e8f0;
+  --banma-muted: #111827;
+  --banma-muted-foreground: #94a3b8;
+  --banma-accent: #134e4a;
+  --banma-accent-foreground: #2dd4bf;
+  --banma-border: rgba(45, 212, 191, 0.18);
+  --banma-input: #111827;
+  --banma-ring: #2dd4bf;
+
+  --banma-radius-sm: 4px;
+  --banma-radius-md: 8px;
+  --banma-radius-lg: 16px;
+
+  --banma-success: #34d399;
+  --banma-warning: #fbbf24;
+  --banma-error: #f87171;
+  --banma-info: #38bdf8;
+
+  --banma-font-sans: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --banma-font-mono: "JetBrains Mono", "SF Mono", "Consolas", monospace;
+
+  --glow-primary: 0 0 24px rgba(45, 212, 191, 0.28);
+  --glow-soft: 0 0 40px rgba(45, 212, 191, 0.08);
+}
+
+html.dark {
+  --banma-background: #05080c;
+  --banma-foreground: #f0f9ff;
+  --banma-card: #0b1218;
+  --banma-card-foreground: #f0f9ff;
+  --banma-popover: #0b1218;
+  --banma-popover-foreground: #f0f9ff;
+  --banma-primary: #2dd4bf;
+  --banma-primary-foreground: #020617;
+  --banma-secondary: #111827;
+  --banma-secondary-foreground: #e2e8f0;
+  --banma-muted: #111827;
+  --banma-muted-foreground: #94a3b8;
+  --banma-accent: #134e4a;
+  --banma-accent-foreground: #2dd4bf;
+  --banma-border: rgba(45, 212, 191, 0.18);
+  --banma-input: #111827;
+  --banma-ring: #2dd4bf;
+}
+
+body {
+  font-family: var(--banma-font-sans);
+  background-color: var(--banma-background);
+  color: var(--banma-foreground);
+}
