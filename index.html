@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页 · 胡晨扬</title>
+    <style id="theme-vars">
+:root {
+  --banma-background: #05080c;
+  --banma-foreground: #f0f9ff;
+  --banma-card: #0b1218;
+  --banma-card-foreground: #f0f9ff;
+  --banma-popover: #0b1218;
+  --banma-popover-foreground: #f0f9ff;
+  --banma-primary: #2dd4bf;
+  --banma-primary-foreground: #020617;
+  --banma-secondary: #111827;
+  --banma-secondary-foreground: #e2e8f0;
+  --banma-muted: #111827;
+  --banma-muted-foreground: #94a3b8;
+  --banma-accent: #134e4a;
+  --banma-accent-foreground: #2dd4bf;
+  --banma-border: rgba(45, 212, 191, 0.18);
+  --banma-input: #111827;
+  --banma-ring: #2dd4bf;
+  --banma-radius-sm: 4px;
+  --banma-radius-md: 8px;
+  --banma-radius-lg: 16px;
+  --banma-success: #34d399;
+  --banma-warning: #fbbf24;
+  --banma-error: #f87171;
+  --banma-info: #38bdf8;
+  --banma-font-sans: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --banma-font-mono: "JetBrains Mono", "SF Mono", "Consolas", monospace;
+}
+html.dark {
+  --banma-background: #05080c;
+  --banma-foreground: #f0f9ff;
+  --banma-card: #0b1218;
+  --banma-card-foreground: #f0f9ff;
+  --banma-popover: #0b1218;
+  --banma-popover-foreground: #f0f9ff;
+  --banma-primary: #2dd4bf;
+  --banma-primary-foreground: #020617;
+  --banma-secondary: #111827;
+  --banma-secondary-foreground: #e2e8f0;
+  --banma-muted: #111827;
+  --banma-muted-foreground: #94a3b8;
+  --banma-accent: #134e4a;
+  --banma-accent-foreground: #2dd4bf;
+  --banma-border: rgba(45, 212, 191, 0.18);
+  --banma-input: #111827;
+  --banma-ring: #2dd4bf;
+}
+body {
+  font-family: var(--banma-font-sans);
+  background-color: var(--banma-background);
+  color: var(--banma-foreground);
+}
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--banma-background);
+    --color-foreground: var(--banma-foreground);
+    --color-card: var(--banma-card);
+    --color-card-foreground: var(--banma-card-foreground);
+    --color-popover: var(--banma-popover);
+    --color-popover-foreground: var(--banma-popover-foreground);
+    --color-primary: var(--banma-primary);
+    --color-primary-foreground: var(--banma-primary-foreground);
+    --color-secondary: var(--banma-secondary);
+    --color-secondary-foreground: var(--banma-secondary-foreground);
+    --color-muted: var(--banma-muted);
+    --color-muted-foreground: var(--banma-muted-foreground);
+    --color-accent: var(--banma-accent);
+    --color-accent-foreground: var(--banma-accent-foreground);
+    --color-border: var(--banma-border);
+    --color-input: var(--banma-input);
+    --color-ring: var(--banma-ring);
+    --radius-sm: var(--banma-radius-sm);
+    --radius-md: var(--banma-radius-md);
+    --radius-lg: var(--banma-radius-lg);
+  }
+  @layer base {
+    body { background: var(--banma-background); color: var(--banma-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--banma-background); }
+      .text-background { color: var(--banma-background); }
+      .border-background { border-color: var(--banma-background); }
+      .ring-background { --tw-ring-color: var(--banma-background); }
+      .bg-foreground { background-color: var(--banma-foreground); }
+      .text-foreground { color: var(--banma-foreground); }
+      .border-foreground { border-color: var(--banma-foreground); }
+      .ring-foreground { --tw-ring-color: var(--banma-foreground); }
+      .bg-card { background-color: var(--banma-card); }
+      .text-card { color: var(--banma-card); }
+      .border-card { border-color: var(--banma-card); }
+      .ring-card { --tw-ring-color: var(--banma-card); }
+      .bg-card-foreground { background-color: var(--banma-card-foreground); }
+      .text-card-foreground { color: var(--banma-card-foreground); }
+      .border-card-foreground { border-color: var(--banma-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--banma-card-foreground); }
+      .bg-popover { background-color: var(--banma-popover); }
+      .text-popover { color: var(--banma-popover); }
+      .border-popover { border-color: var(--banma-popover); }
+      .ring-popover { --tw-ring-color: var(--banma-popover); }
+      .bg-popover-foreground { background-color: var(--banma-popover-foreground); }
+      .text-popover-foreground { color: var(--banma-popover-foreground); }
+      .border-popover-foreground { border-color: var(--banma-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--banma-popover-foreground); }
+      .bg-primary { background-color: var(--banma-primary); }
+      .text-primary { color: var(--banma-primary); }
+      .border-primary { border-color: var(--banma-primary); }
+      .ring-primary { --tw-ring-color: var(--banma-primary); }
+      .bg-primary-foreground { background-color: var(--banma-primary-foreground); }
+      .text-primary-foreground { color: var(--banma-primary-foreground); }
+      .border-primary-foreground { border-color: var(--banma-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--banma-primary-foreground); }
+      .bg-secondary { background-color: var(--banma-secondary); }
+      .text-secondary { color: var(--banma-secondary); }
+      .border-secondary { border-color: var(--banma-secondary); }
+      .ring-secondary { --tw-ring-color: var(--banma-secondary); }
+      .bg-secondary-foreground { background-color: var(--banma-secondary-foreground); }
+      .text-secondary-foreground { color: var(--banma-secondary-foreground); }
+      .border-secondary-foreground { border-color: var(--banma-secondary-foreground); }
+      .ring-secondary-foreground { --tw-ring-color: var(--banma-secondary-foreground); }
+      .bg-muted { background-color: var(--banma-muted); }
+      .text-muted { color: var(--banma-muted); }
+      .border-muted { border-color: var(--banma-muted); }
+      .ring-muted { --tw-ring-color: var(--banma-muted); }
+      .bg-muted-foreground { background-color: var(--banma-muted-foreground); }
+      .text-muted-foreground { color: var(--banma-muted-foreground); }
+      .border-muted-foreground { border-color: var(--banma-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--banma-muted-foreground); }
+      .bg-accent { background-color: var(--banma-accent); }
+      .text-accent { color: var(--banma-accent); }
+      .border-accent { border-color: var(--banma-accent); }
+      .ring-accent { --tw-ring-color: var(--banma-accent); }
+      .bg-accent-foreground { background-color: var(--banma-accent-foreground); }
+      .text-accent-foreground { color: var(--banma-accent-foreground); }
+      .border-accent-foreground { border-color: var(--banma-accent-foreground); }
+      .ring-accent-foreground { --tw-ring-color: var(--banma-accent-foreground); }
+      .bg-border { background-color: var(--banma-border); }
+      .text-border { color: var(--banma-border); }
+      .border-border { border-color: var(--banma-border); }
+      .ring-border { --tw-ring-color: var(--banma-border); }
+      .bg-input { background-color: var(--banma-input); }
+      .text-input { color: var(--banma-input); }
+      .border-input { border-color: var(--banma-input); }
+      .ring-input { --tw-ring-color: var(--banma-input); }
+      .bg-ring { background-color: var(--banma-ring); }
+      .text-ring { color: var(--banma-ring); }
+      .border-ring { border-color: var(--banma-ring); }
+      .ring-ring { --tw-ring-color: var(--banma-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen overflow-x-hidden bg-background text-foreground">
+  <main class="relative mx-auto max-w-6xl px-6 py-10 md:py-16">
+    <!-- ambient glow -->
+    <div class="pointer-events-none fixed inset-0 -z-10">
+      <div class="absolute left-1/2 top-0 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-primary/8 blur-[140px]"></div>
+      <div class="absolute bottom-0 right-0 h-[360px] w-[360px] rounded-full bg-primary/5 blur-[120px]"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="reveal mb-10 text-center md:mb-14">
+      <h1 class="text-5xl font-bold tracking-tight text-foreground md:text-6xl">胡晨扬</h1>
+      <div class="mt-5 inline-flex flex-col items-center gap-3 md:flex-row md:gap-4">
+        <span class="rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium text-muted-foreground">男 · 31岁 · 汉族</span>
+        <span class="rounded-full bg-primary px-5 py-2 text-sm font-semibold text-primary-foreground shadow-[0_0_24px_rgba(45,212,191,0.28)]">求职意向：产品经理 · 斑马智行</span>
+      </div>
+    </header>
+
+    <!-- Resume body -->
+    <section class="grid gap-6 md:grid-cols-12">
+      <!-- Left profile card -->
+      <article class="reveal md:col-span-4">
+        <div class="rounded-2xl border border-border bg-card p-6 shadow-[0_0_40px_rgba(45,212,191,0.06)] md:p-8">
+          <div class="mb-6 flex items-center gap-4">
+            <div class="flex h-16 w-16 items-center justify-center rounded-full border-2 border-primary bg-primary/10 text-2xl font-bold text-primary shadow-[0_0_20px_rgba(45,212,191,0.2)]">
+              胡
+            </div>
+            <div>
+              <p class="text-lg font-semibold text-foreground">胡晨扬</p>
+              <p class="text-sm text-muted-foreground">现居：合肥</p>
+            </div>
+          </div>
+
+          <div class="space-y-4 text-sm">
+            <div class="flex items-center gap-3">
+              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <i data-lucide="phone" class="h-4 w-4"></i>
+              </div>
+              <div>
+                <p class="text-muted-foreground">电话</p>
+                <p class="font-mono text-foreground">16601891105</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <i data-lucide="mail" class="h-4 w-4"></i>
+              </div>
+              <div>
+                <p class="text-muted-foreground">邮箱</p>
+                <p class="font-mono text-foreground">616855934@qq.com</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <i data-lucide="map-pin" class="h-4 w-4"></i>
+              </div>
+              <div>
+                <p class="text-muted-foreground">籍贯</p>
+                <p class="text-foreground">皖六安</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <i data-lucide="flag" class="h-4 w-4"></i>
+              </div>
+              <div>
+                <p class="text-muted-foreground">政治面貌</p>
+                <p class="text-foreground">团员</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Right summary card -->
+      <article class="reveal md:col-span-8">
+        <div class="rounded-2xl border border-border bg-card p-6 shadow-[0_0_40px_rgba(45,212,191,0.06)] md:p-8">
+          <h2 class="mb-4 flex items-center gap-2 text-xl font-semibold text-foreground">
+            <i data-lucide="user" class="h-5 w-5 text-primary"></i>
+            个人简介
+          </h2>
+          <p class="leading-relaxed text-foreground/90">
+            8年游戏数值与系统设计经验，擅长用数据驱动产品决策、数据收集与优化用户体验。长期从事数值策划工作，具备扎实的数据建模、数据分析与跨团队协作能力，熟悉从需求拆解、方案设计、数值验证到上线调优的全流程。关注汽车智能化与座舱交互体验，期待以产品经理身份加入斑马智行。
+          </p>
+
+          <h3 class="mb-3 mt-8 flex items-center gap-2 text-lg font-semibold text-foreground">
+            <i data-lucide="sparkles" class="h-5 w-5 text-primary"></i>
+            核心优势
+          </h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">数据驱动决策</span>
+            <span class="rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">用户洞察与体验优化</span>
+            <span class="rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">智能座舱产品思维</span>
+            <span class="rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">车联网场景理解</span>
+            <span class="rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">需求拆解与文档能力</span>
+            <span class="rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">跨部门协同推进</span>
+            <span class="rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">数据埋点与指标监控</span>
+            <span class="rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">A/B测试与数据验证</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Navigation modules -->
+    <section class="reveal mt-10">
+      <h2 class="mb-6 text-center text-lg font-medium text-muted-foreground">点击下方模块查看详情</h2>
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-5 md:gap-5">
+        <a href="experience.html" id="nav-experience" data-dom-id="nav-experience" class="nav-card group relative flex flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl border border-border bg-card p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-[0_0_32px_rgba(45,212,191,0.18)]">
+          <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
+            <i data-lucide="briefcase" class="h-7 w-7"></i>
+          </div>
+          <span class="font-semibold text-foreground transition-colors group-hover:text-primary">工作经历</span>
+        </a>
+
+        <a href="education.html" id="nav-education" data-dom-id="nav-education" class="nav-card group relative flex flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl border border-border bg-card p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-[0_0_32px_rgba(45,212,191,0.18)]">
+          <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
+            <i data-lucide="graduation-cap" class="h-7 w-7"></i>
+          </div>
+          <span class="font-semibold text-foreground transition-colors group-hover:text-primary">教育背景</span>
+        </a>
+
+        <a href="skills.html" id="nav-skills" data-dom-id="nav-skills" class="nav-card group relative flex flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl border border-border bg-card p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-[0_0_32px_rgba(45,212,191,0.18)]">
+          <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
+            <i data-lucide="zap" class="h-7 w-7"></i>
+          </div>
+          <span class="font-semibold text-foreground transition-colors group-hover:text-primary">核心能力</span>
+        </a>
+
+        <a href="insight.html" id="nav-insight" data-dom-id="nav-insight" class="nav-card group relative flex flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl border border-border bg-card p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-[0_0_32px_rgba(45,212,191,0.18)]">
+          <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
+            <i data-lucide="lightbulb" class="h-7 w-7"></i>
+          </div>
+          <span class="font-semibold text-foreground transition-colors group-hover:text-primary">产品感知</span>
+        </a>
+
+        <a href="contact.html" id="nav-contact" data-dom-id="nav-contact" class="nav-card group relative flex flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl border border-border bg-card p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:shadow-[0_0_32px_rgba(45,212,191,0.18)]">
+          <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
+            <i data-lucide="mail" class="h-7 w-7"></i>
+          </div>
+          <span class="font-semibold text-foreground transition-colors group-hover:text-primary">联系我</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Transition overlay -->
+  <div id="transition-overlay" class="pointer-events-none fixed inset-0 z-50 flex items-center justify-center opacity-0">
+    <div id="transition-ripple" class="rounded-full bg-primary scale-0"></div>
+  </div>
+
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: revealIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+    .reveal:nth-child(1) { animation-delay: 0.08s; }
+    .reveal:nth-child(2) { animation-delay: 0.18s; }
+    .reveal:nth-child(3) { animation-delay: 0.28s; }
+
+    @keyframes revealIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(45,212,191,0.12), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .nav-card:hover::before {
+      opacity: 1;
+    }
+
+    .nav-card.active {
+      border-color: var(--banma-primary);
+      background: rgba(45, 212, 191, 0.12);
+      box-shadow: 0 0 48px rgba(45, 212, 191, 0.35);
+    }
+    .nav-card.active span {
+      color: var(--banma-primary);
+    }
+
+    #transition-overlay {
+      transition: opacity 0.05s ease;
+    }
+    #transition-overlay.expanding {
+      opacity: 1;
+    }
+    #transition-ripple {
+      width: 10vmax;
+      height: 10vmax;
+      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    #transition-ripple.expand {
+      transform: scale(35);
+    }
+  </style>
+
+  <script>
+    (function() {
+      document.documentElement.classList.add('dark');
+      lucide.createIcons();
+
+      const overlay = document.getElementById('transition-overlay');
+      const ripple = document.getElementById('transition-ripple');
+      const cards = document.querySelectorAll('.nav-card');
+
+      cards.forEach(card => {
+        card.addEventListener('click', function(e) {
+          e.preventDefault();
+          const href = this.getAttribute('href');
+          const rect = this.getBoundingClientRect();
+          const cx = rect.left + rect.width / 2;
+          const cy = rect.top + rect.height / 2;
+
+          // highlight active state
+          cards.forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+
+          // position ripple at click center
+          ripple.style.position = 'fixed';
+          ripple.style.left = cx + 'px';
+          ripple.style.top = cy + 'px';
+          ripple.style.transform = 'translate(-50%, -50%) scale(0)';
+
+          overlay.classList.add('expanding');
+          requestAnimationFrame(() => {
+            ripple.classList.add('expand');
+          });
+
+          setTimeout(() => {
+            window.location.href = href;
+          }, 620);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
