@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我 · 胡晨扬</title>
+    <style id="theme-vars">
+:root {
+  --banma-background: #05080c;
+  --banma-foreground: #f0f9ff;
+  --banma-card: #0b1218;
+  --banma-card-foreground: #f0f9ff;
+  --banma-popover: #0b1218;
+  --banma-popover-foreground: #f0f9ff;
+  --banma-primary: #2dd4bf;
+  --banma-primary-foreground: #020617;
+  --banma-secondary: #111827;
+  --banma-secondary-foreground: #e2e8f0;
+  --banma-muted: #111827;
+  --banma-muted-foreground: #94a3b8;
+  --banma-accent: #134e4a;
+  --banma-accent-foreground: #2dd4bf;
+  --banma-border: rgba(45, 212, 191, 0.18);
+  --banma-input: #111827;
+  --banma-ring: #2dd4bf;
+
+  --banma-radius-sm: 4px;
+  --banma-radius-md: 8px;
+  --banma-radius-lg: 16px;
+
+  --banma-success: #34d399;
+  --banma-warning: #fbbf24;
+  --banma-error: #f87171;
+  --banma-info: #38bdf8;
+
+  --banma-font-sans: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --banma-font-mono: "JetBrains Mono", "SF Mono", "Consolas", monospace;
+
+  --glow-primary: 0 0 24px rgba(45, 212, 191, 0.28);
+  --glow-soft: 0 0 40px rgba(45, 212, 191, 0.08);
+}
+
+html.dark {
+  --banma-background: #05080c;
+  --banma-foreground: #f0f9ff;
+  --banma-card: #0b1218;
+  --banma-card-foreground: #f0f9ff;
+  --banma-popover: #0b1218;
+  --banma-popover-foreground: #f0f9ff;
+  --banma-primary: #2dd4bf;
+  --banma-primary-foreground: #020617;
+  --banma-secondary: #111827;
+  --banma-secondary-foreground: #e2e8f0;
+  --banma-muted: #111827;
+  --banma-muted-foreground: #94a3b8;
+  --banma-accent: #134e4a;
+  --banma-accent-foreground: #2dd4bf;
+  --banma-border: rgba(45, 212, 191, 0.18);
+  --banma-input: #111827;
+  --banma-ring: #2dd4bf;
+}
+
+body {
+  font-family: var(--banma-font-sans);
+  background-color: var(--banma-background);
+  color: var(--banma-foreground);
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--banma-background);
+    --color-foreground: var(--banma-foreground);
+    --color-card: var(--banma-card);
+    --color-card-foreground: var(--banma-card-foreground);
+    --color-popover: var(--banma-popover);
+    --color-popover-foreground: var(--banma-popover-foreground);
+    --color-primary: var(--banma-primary);
+    --color-primary-foreground: var(--banma-primary-foreground);
+    --color-secondary: var(--banma-secondary);
+    --color-secondary-foreground: var(--banma-secondary-foreground);
+    --color-muted: var(--banma-muted);
+    --color-muted-foreground: var(--banma-muted-foreground);
+    --color-accent: var(--banma-accent);
+    --color-accent-foreground: var(--banma-accent-foreground);
+    --color-border: var(--banma-border);
+    --color-input: var(--banma-input);
+    --color-ring: var(--banma-ring);
+    --radius-sm: var(--banma-radius-sm);
+    --radius-md: var(--banma-radius-md);
+    --radius-lg: var(--banma-radius-lg);
+  }
+  @layer base {
+    body { background: var(--banma-background); color: var(--banma-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--banma-background); }
+      .text-background { color: var(--banma-background); }
+      .border-background { border-color: var(--banma-background); }
+      .ring-background { --tw-ring-color: var(--banma-background); }
+      .bg-foreground { background-color: var(--banma-foreground); }
+      .text-foreground { color: var(--banma-foreground); }
+      .border-foreground { border-color: var(--banma-foreground); }
+      .ring-foreground { --tw-ring-color: var(--banma-foreground); }
+      .bg-card { background-color: var(--banma-card); }
+      .text-card { color: var(--banma-card); }
+      .border-card { border-color: var(--banma-card); }
+      .ring-card { --tw-ring-color: var(--banma-card); }
+      .bg-card-foreground { background-color: var(--banma-card-foreground); }
+      .text-card-foreground { color: var(--banma-card-foreground); }
+      .border-card-foreground { border-color: var(--banma-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--banma-card-foreground); }
+      .bg-popover { background-color: var(--banma-popover); }
+      .text-popover { color: var(--banma-popover); }
+      .border-popover { border-color: var(--banma-popover); }
+      .ring-popover { --tw-ring-color: var(--banma-popover); }
+      .bg-popover-foreground { background-color: var(--banma-popover-foreground); }
+      .text-popover-foreground { color: var(--banma-popover-foreground); }
+      .border-popover-foreground { border-color: var(--banma-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--banma-popover-foreground); }
+      .bg-primary { background-color: var(--banma-primary); }
+      .text-primary { color: var(--banma-primary); }
+      .border-primary { border-color: var(--banma-primary); }
+      .ring-primary { --tw-ring-color: var(--banma-primary); }
+      .bg-primary-foreground { background-color: var(--banma-primary-foreground); }
+      .text-primary-foreground { color: var(--banma-primary-foreground); }
+      .border-primary-foreground { border-color: var(--banma-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--banma-primary-foreground); }
+      .bg-secondary { background-color: var(--banma-secondary); }
+      .text-secondary { color: var(--banma-secondary); }
+      .border-secondary { border-color: var(--banma-secondary); }
+      .ring-secondary { --tw-ring-color: var(--banma-secondary); }
+      .bg-secondary-foreground { background-color: var(--banma-secondary-foreground); }
+      .text-secondary-foreground { color: var(--banma-secondary-foreground); }
+      .border-secondary-foreground { border-color: var(--banma-secondary-foreground); }
+      .ring-secondary-foreground { --tw-ring-color: var(--banma-secondary-foreground); }
+      .bg-muted { background-color: var(--banma-muted); }
+      .text-muted { color: var(--banma-muted); }
+      .border-muted { border-color: var(--banma-muted); }
+      .ring-muted { --tw-ring-color: var(--banma-muted); }
+      .bg-muted-foreground { background-color: var(--banma-muted-foreground); }
+      .text-muted-foreground { color: var(--banma-muted-foreground); }
+      .border-muted-foreground { border-color: var(--banma-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--banma-muted-foreground); }
+      .bg-accent { background-color: var(--banma-accent); }
+      .text-accent { color: var(--banma-accent); }
+      .border-accent { border-color: var(--banma-accent); }
+      .ring-accent { --tw-ring-color: var(--banma-accent); }
+      .bg-accent-foreground { background-color: var(--banma-accent-foreground); }
+      .text-accent-foreground { color: var(--banma-accent-foreground); }
+      .border-accent-foreground { border-color: var(--banma-accent-foreground); }
+      .ring-accent-foreground { --tw-ring-color: var(--banma-accent-foreground); }
+      .bg-border { background-color: var(--banma-border); }
+      .text-border { color: var(--banma-border); }
+      .border-border { border-color: var(--banma-border); }
+      .ring-border { --tw-ring-color: var(--banma-border); }
+      .bg-input { background-color: var(--banma-input); }
+      .text-input { color: var(--banma-input); }
+      .border-input { border-color: var(--banma-input); }
+      .ring-input { --tw-ring-color: var(--banma-input); }
+      .bg-ring { background-color: var(--banma-ring); }
+      .text-ring { color: var(--banma-ring); }
+      .border-ring { border-color: var(--banma-ring); }
+      .ring-ring { --tw-ring-color: var(--banma-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+      .glow-card {
+        border: 1px solid var(--banma-border);
+        box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.06), 0 0 28px rgba(45, 212, 191, 0.10);
+        transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+      }
+      .glow-card:hover {
+        border-color: rgba(45, 212, 191, 0.45);
+        box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.12), 0 0 40px rgba(45, 212, 191, 0.22);
+        transform: translateY(-4px);
+      }
+      .toast {
+        position: fixed;
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-background text-foreground">
+  <header class="w-full max-w-6xl mx-auto px-8 pt-16 pb-8">
+    <a id="back-home" href="index.html" class="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8" data-dom-id="back-home">
+      <i data-lucide="arrow-left" class="w-4 h-4"></i>
+      <span>返回首页</span>
+    </a>
+    <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4">联系我</h1>
+    <p class="text-lg text-muted-foreground max-w-2xl">期待加入斑马智行，共同探索智能座舱与车联网的产品未来</p>
+  </header>
+
+  <main class="flex-1 w-full max-w-6xl mx-auto px-8 pb-24">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Phone -->
+      <div class="glow-card rounded-2xl bg-card p-8 flex flex-col justify-between min-h-[220px]">
+        <div class="flex items-start justify-between mb-6">
+          <div class="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center text-primary">
+            <i data-lucide="phone" class="w-6 h-6"></i>
+          </div>
+          <button id="copy-phone" type="button" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors" data-copy="16601891105" data-dom-id="copy-phone">
+            <i data-lucide="copy" class="w-4 h-4"></i>
+            <span>复制</span>
+          </button>
+        </div>
+        <div>
+          <p class="text-sm text-muted-foreground mb-1">电话</p>
+          <p class="text-2xl md:text-3xl font-semibold text-foreground font-mono tracking-wide">16601891105</p>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="glow-card rounded-2xl bg-card p-8 flex flex-col justify-between min-h-[220px]">
+        <div class="flex items-start justify-between mb-6">
+          <div class="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center text-primary">
+            <i data-lucide="mail" class="w-6 h-6"></i>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="copy-email" type="button" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors" data-copy="616855934@qq.com" data-dom-id="copy-email">
+              <i data-lucide="copy" class="w-4 h-4"></i>
+              <span>复制</span>
+            </button>
+            <a href="mailto:616855934@qq.com" class="inline-flex items-center justify-center w-10 h-10 rounded-lg border border-border text-muted-foreground hover:text-primary hover:border-primary/40 transition-colors" aria-label="发送邮件">
+              <i data-lucide="send" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+        <div>
+          <p class="text-sm text-muted-foreground mb-1">邮箱</p>
+          <p class="text-2xl md:text-3xl font-semibold text-foreground font-mono tracking-wide">616855934@qq.com</p>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div class="glow-card rounded-2xl bg-card p-8 flex flex-col justify-between min-h-[220px]">
+        <div class="flex items-start justify-between mb-6">
+          <div class="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center text-primary">
+            <i data-lucide="map-pin" class="w-6 h-6"></i>
+          </div>
+        </div>
+        <div>
+          <p class="text-sm text-muted-foreground mb-1">现居</p>
+          <p class="text-2xl md:text-3xl font-semibold text-foreground">合肥</p>
+        </div>
+      </div>
+
+      <!-- Position -->
+      <div class="glow-card rounded-2xl bg-card p-8 flex flex-col justify-between min-h-[220px]">
+        <div class="flex items-start justify-between mb-6">
+          <div class="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center text-primary">
+            <i data-lucide="briefcase" class="w-6 h-6"></i>
+          </div>
+        </div>
+        <div>
+          <p class="text-sm text-muted-foreground mb-1">意向岗位</p>
+          <p class="text-2xl md:text-3xl font-semibold text-foreground">产品经理 · 斑马智行</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="toast" class="toast inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-card border border-border text-foreground shadow-lg" role="status" aria-live="polite">
+    <i data-lucide="check-circle-2" class="w-5 h-5 text-primary"></i>
+    <span id="toast-message">已复制到剪贴板</span>
+  </div>
+
+  <script>
+    (function () {
+      lucide.createIcons();
+
+      var toast = document.getElementById('toast');
+      var toastMessage = document.getElementById('toast-message');
+      var toastTimer = null;
+
+      function showToast(message) {
+        toastMessage.textContent = message;
+        toast.classList.add('show');
+        if (toastTimer) clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          toast.classList.remove('show');
+        }, 2000);
+      }
+
+      function copyText(text, label) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            showToast(label + '已复制到剪贴板');
+          }).catch(function () {
+            fallbackCopy(text, label);
+          });
+        } else {
+          fallbackCopy(text, label);
+        }
+      }
+
+      function fallbackCopy(text, label) {
+        var textarea = document.createElement('textarea');
+        textarea.value = text;
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          document.execCommand('copy');
+          showToast(label + '已复制到剪贴板');
+        } catch (err) {
+          showToast('复制失败，请手动复制');
+        }
+        document.body.removeChild(textarea);
+      }
+
+      var copyPhone = document.getElementById('copy-phone');
+      var copyEmail = document.getElementById('copy-email');
+
+      if (copyPhone) {
+        copyPhone.addEventListener('click', function () {
+          copyText(copyPhone.getAttribute('data-copy'), '电话');
+        });
+      }
+
+      if (copyEmail) {
+        copyEmail.addEventListener('click', function () {
+          copyText(copyEmail.getAttribute('data-copy'), '邮箱');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
