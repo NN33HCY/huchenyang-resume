@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品感知 · 胡晨扬</title>
+    <style id="theme-vars">
+:root {
+  --banma-background: #05080c;
+  --banma-foreground: #f0f9ff;
+  --banma-card: #0b1218;
+  --banma-card-foreground: #f0f9ff;
+  --banma-popover: #0b1218;
+  --banma-popover-foreground: #f0f9ff;
+  --banma-primary: #2dd4bf;
+  --banma-primary-foreground: #020617;
+  --banma-secondary: #111827;
+  --banma-secondary-foreground: #e2e8f0;
+  --banma-muted: #111827;
+  --banma-muted-foreground: #94a3b8;
+  --banma-accent: #134e4a;
+  --banma-accent-foreground: #2dd4bf;
+  --banma-border: rgba(45, 212, 191, 0.18);
+  --banma-input: #111827;
+  --banma-ring: #2dd4bf;
+
+  --banma-radius-sm: 4px;
+  --banma-radius-md: 8px;
+  --banma-radius-lg: 16px;
+
+  --banma-success: #34d399;
+  --banma-warning: #fbbf24;
+  --banma-error: #f87171;
+  --banma-info: #38bdf8;
+
+  --banma-font-sans: "Inter", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --banma-font-mono: "JetBrains Mono", "SF Mono", "Consolas", monospace;
+
+  --glow-primary: 0 0 24px rgba(45, 212, 191, 0.28);
+  --glow-soft: 0 0 40px rgba(45, 212, 191, 0.08);
+}
+
+html.dark {
+  --banma-background: #05080c;
+  --banma-foreground: #f0f9ff;
+  --banma-card: #0b1218;
+  --banma-card-foreground: #f0f9ff;
+  --banma-popover: #0b1218;
+  --banma-popover-foreground: #f0f9ff;
+  --banma-primary: #2dd4bf;
+  --banma-primary-foreground: #020617;
+  --banma-secondary: #111827;
+  --banma-secondary-foreground: #e2e8f0;
+  --banma-muted: #111827;
+  --banma-muted-foreground: #94a3b8;
+  --banma-accent: #134e4a;
+  --banma-accent-foreground: #2dd4bf;
+  --banma-border: rgba(45, 212, 191, 0.18);
+  --banma-input: #111827;
+  --banma-ring: #2dd4bf;
+}
+
+body {
+  font-family: var(--banma-font-sans);
+  background-color: var(--banma-background);
+  color: var(--banma-foreground);
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--banma-background);
+    --color-foreground: var(--banma-foreground);
+    --color-card: var(--banma-card);
+    --color-card-foreground: var(--banma-card-foreground);
+    --color-popover: var(--banma-popover);
+    --color-popover-foreground: var(--banma-popover-foreground);
+    --color-primary: var(--banma-primary);
+    --color-primary-foreground: var(--banma-primary-foreground);
+    --color-secondary: var(--banma-secondary);
+    --color-secondary-foreground: var(--banma-secondary-foreground);
+    --color-muted: var(--banma-muted);
+    --color-muted-foreground: var(--banma-muted-foreground);
+    --color-accent: var(--banma-accent);
+    --color-accent-foreground: var(--banma-accent-foreground);
+    --color-border: var(--banma-border);
+    --color-input: var(--banma-input);
+    --color-ring: var(--banma-ring);
+    --radius-sm: var(--banma-radius-sm);
+    --radius-md: var(--banma-radius-md);
+    --radius-lg: var(--banma-radius-lg);
+  }
+  @layer base {
+    body { background: var(--banma-background); color: var(--banma-foreground); }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--banma-background); }
+      .text-background { color: var(--banma-background); }
+      .border-background { border-color: var(--banma-background); }
+      .ring-background { --tw-ring-color: var(--banma-background); }
+      .bg-foreground { background-color: var(--banma-foreground); }
+      .text-foreground { color: var(--banma-foreground); }
+      .border-foreground { border-color: var(--banma-foreground); }
+      .ring-foreground { --tw-ring-color: var(--banma-foreground); }
+      .bg-card { background-color: var(--banma-card); }
+      .text-card { color: var(--banma-card); }
+      .border-card { border-color: var(--banma-card); }
+      .ring-card { --tw-ring-color: var(--banma-card); }
+      .bg-card-foreground { background-color: var(--banma-card-foreground); }
+      .text-card-foreground { color: var(--banma-card-foreground); }
+      .border-card-foreground { border-color: var(--banma-card-foreground); }
+      .ring-card-foreground { --tw-ring-color: var(--banma-card-foreground); }
+      .bg-popover { background-color: var(--banma-popover); }
+      .text-popover { color: var(--banma-popover); }
+      .border-popover { border-color: var(--banma-popover); }
+      .ring-popover { --tw-ring-color: var(--banma-popover); }
+      .bg-popover-foreground { background-color: var(--banma-popover-foreground); }
+      .text-popover-foreground { color: var(--banma-popover-foreground); }
+      .border-popover-foreground { border-color: var(--banma-popover-foreground); }
+      .ring-popover-foreground { --tw-ring-color: var(--banma-popover-foreground); }
+      .bg-primary { background-color: var(--banma-primary); }
+      .text-primary { color: var(--banma-primary); }
+      .border-primary { border-color: var(--banma-primary); }
+      .ring-primary { --tw-ring-color: var(--banma-primary); }
+      .bg-primary-foreground { background-color: var(--banma-primary-foreground); }
+      .text-primary-foreground { color: var(--banma-primary-foreground); }
+      .border-primary-foreground { border-color: var(--banma-primary-foreground); }
+      .ring-primary-foreground { --tw-ring-color: var(--banma-primary-foreground); }
+      .bg-secondary { background-color: var(--banma-secondary); }
+      .text-secondary { color: var(--banma-secondary); }
+      .border-secondary { border-color: var(--banma-secondary); }
+      .ring-secondary { --tw-ring-color: var(--banma-secondary); }
+      .bg-secondary-foreground { background-color: var(--banma-secondary-foreground); }
+      .text-secondary-foreground { color: var(--banma-secondary-foreground); }
+      .border-secondary-foreground { border-color: var(--banma-secondary-foreground); }
+      .ring-secondary-foreground { --tw-ring-color: var(--banma-secondary-foreground); }
+      .bg-muted { background-color: var(--banma-muted); }
+      .text-muted { color: var(--banma-muted); }
+      .border-muted { border-color: var(--banma-muted); }
+      .ring-muted { --tw-ring-color: var(--banma-muted); }
+      .bg-muted-foreground { background-color: var(--banma-muted-foreground); }
+      .text-muted-foreground { color: var(--banma-muted-foreground); }
+      .border-muted-foreground { border-color: var(--banma-muted-foreground); }
+      .ring-muted-foreground { --tw-ring-color: var(--banma-muted-foreground); }
+      .bg-accent { background-color: var(--banma-accent); }
+      .text-accent { color: var(--banma-accent); }
+      .border-accent { border-color: var(--banma-accent); }
+      .ring-accent { --tw-ring-color: var(--banma-accent); }
+      .bg-accent-foreground { background-color: var(--banma-accent-foreground); }
+      .text-accent-foreground { color: var(--banma-accent-foreground); }
+      .border-accent-foreground { border-color: var(--banma-accent-foreground); }
+      .ring-accent-foreground { --tw-ring-color: var(--banma-accent-foreground); }
+      .bg-border { background-color: var(--banma-border); }
+      .text-border { color: var(--banma-border); }
+      .border-border { border-color: var(--banma-border); }
+      .ring-border { --tw-ring-color: var(--banma-border); }
+      .bg-input { background-color: var(--banma-input); }
+      .text-input { color: var(--banma-input); }
+      .border-input { border-color: var(--banma-input); }
+      .ring-input { --tw-ring-color: var(--banma-input); }
+      .bg-ring { background-color: var(--banma-ring); }
+      .text-ring { color: var(--banma-ring); }
+      .border-ring { border-color: var(--banma-ring); }
+      .ring-ring { --tw-ring-color: var(--banma-ring); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+    </style>
+</head>
+<body class="min-h-screen bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary">
+  <div class="relative mx-auto min-h-screen max-w-5xl px-6 py-20 lg:px-8">
+    <!-- subtle glow backdrop -->
+    <div class="pointer-events-none absolute inset-x-0 top-0 h-[480px] bg-gradient-to-b from-primary/5 via-transparent to-transparent"></div>
+
+    <main class="relative z-10">
+      <!-- Header -->
+      <header class="mb-16 text-center">
+        <p class="mb-3 inline-flex items-center gap-2 text-sm font-medium tracking-widest text-primary uppercase">
+          <i data-lucide="scan-eye" class="h-4 w-4"></i>
+          INSIGHT
+        </p>
+        <h1 class="mb-5 text-4xl font-bold tracking-tight text-foreground lg:text-5xl">智能出行洞察</h1>
+        <p class="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          对现代智能出行充满兴趣，相信科技应当服务具体的生产场景，而非堆砌油车时代的参数游戏
+        </p>
+      </header>
+
+      <!-- Main Quote -->
+      <section class="mb-20">
+        <div class="relative rounded-2xl border border-border bg-card/50 p-10 lg:p-14">
+          <i data-lucide="quote" class="absolute left-8 top-6 h-10 w-10 text-primary/20 lg:left-12 lg:top-10 lg:h-14 lg:w-14"></i>
+          <blockquote class="relative z-10 text-center text-2xl font-medium leading-snug text-foreground lg:text-4xl">
+            科技的价值在于让出行<br class="hidden lg:block" />
+            更安全、更高效、更自然。
+          </blockquote>
+          <div class="mt-8 flex justify-center">
+            <div class="h-1 w-16 rounded-full bg-primary/40"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Driving Experience List -->
+      <section class="mb-20">
+        <div class="mb-8 flex items-center gap-3">
+          <i data-lucide="car" class="h-5 w-5 text-primary"></i>
+          <h2 class="text-xl font-semibold text-foreground">驾驶经验与出行感知</h2>
+        </div>
+
+        <div class="grid gap-4">
+          <!-- item 1 -->
+          <div class="group flex items-start gap-4 rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/40 hover:bg-card/80">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+              <i data-lucide="id-card" class="h-5 w-5"></i>
+            </div>
+            <div class="flex-1">
+              <div class="mb-2 flex flex-wrap items-center gap-2">
+                <span class="text-base font-medium text-foreground">C 照驾照</span>
+                <span class="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">10 年驾龄</span>
+              </div>
+              <p class="leading-relaxed text-muted-foreground">持有 C 照，<span class="text-foreground">实际驾龄 10 年</span>，覆盖城市通勤、高速长途、夜间与雨雪等多种场景，对驾驶者的真实注意力负荷与操作习惯有持续体感。</p>
+            </div>
+          </div>
+
+          <!-- item 2 -->
+          <div class="group flex items-start gap-4 rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/40 hover:bg-card/80">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+              <i data-lucide="gauge" class="h-5 w-5"></i>
+            </div>
+            <div class="flex-1">
+              <div class="mb-2 flex flex-wrap items-center gap-2">
+                <span class="text-base font-medium text-foreground">多车型体验</span>
+                <span class="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">20+ 款车型</span>
+              </div>
+              <p class="leading-relaxed text-muted-foreground">累计驾驶与深度体验过 <span class="text-foreground">20 余款车型</span>，涵盖燃油、混动与纯电，熟悉不同动力形式、座舱交互与辅助驾驶系统在实际场景中的表现差异。</p>
+            </div>
+          </div>
+
+          <!-- item 3 -->
+          <div class="group flex items-start gap-4 rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/40 hover:bg-card/80">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+              <i data-lucide="map-pin" class="h-5 w-5"></i>
+            </div>
+            <div class="flex-1">
+              <div class="mb-2 flex flex-wrap items-center gap-2">
+                <span class="text-base font-medium text-foreground">场景而非参数</span>
+                <span class="rounded-full border border-border bg-background px-2.5 py-0.5 text-xs text-muted-foreground">产品经理视角</span>
+              </div>
+              <p class="leading-relaxed text-muted-foreground">更关注功能在<span class="text-foreground">具体场景</span>中的可用性：导航语音是否打断音乐、辅助驾驶在拥堵路段的接管逻辑、车机冷启动后的响应速度，这些才是影响用户 daily drive 的关键。</p>
+            </div>
+          </div>
+
+          <!-- item 4 -->
+          <div class="group flex items-start gap-4 rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/40 hover:bg-card/80">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+              <i data-lucide="brain-circuit" class="h-5 w-5"></i>
+            </div>
+            <div class="flex-1">
+              <div class="mb-2 flex flex-wrap items-center gap-2">
+                <span class="text-base font-medium text-foreground">智能化兴趣</span>
+                <span class="rounded-full border border-border bg-background px-2.5 py-0.5 text-xs text-muted-foreground">座舱 / 车联网</span>
+              </div>
+              <p class="leading-relaxed text-muted-foreground">持续关注 <span class="text-foreground">智能座舱</span>、<span class="text-foreground">车联网服务</span> 与 <span class="text-foreground">人机交互</span> 的发展趋势，认为未来的车载产品应从「功能堆叠」转向「情境化主动服务」。</p>
+            </div>
+          </div>
+
+          <!-- item 5 -->
+          <div class="group flex items-start gap-4 rounded-xl border border-primary/30 bg-primary/5 p-5">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary">
+              <i data-lucide="lightbulb" class="h-5 w-5"></i>
+            </div>
+            <div class="flex-1">
+              <div class="mb-2 flex flex-wrap items-center gap-2">
+                <span class="text-base font-medium text-foreground">核心洞察</span>
+                <span class="rounded-full bg-primary px-2.5 py-0.5 text-xs font-medium text-primary-foreground">产品直觉</span>
+              </div>
+              <p class="leading-relaxed text-muted-foreground">真实的用户价值来自对<span class="text-foreground">驾驶场景</span>、<span class="text-foreground">注意力分配</span>、<span class="text-foreground">情绪节奏</span> 与 <span class="text-foreground">安全边界</span> 的深度理解，而非简单的参数对比。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Closing -->
+      <section class="mb-20">
+        <div class="rounded-2xl border border-border bg-gradient-to-br from-secondary to-background p-8 lg:p-10">
+          <div class="mb-4 flex items-center gap-3 text-primary">
+            <i data-lucide="target" class="h-5 w-5"></i>
+            <span class="text-sm font-semibold tracking-wider uppercase">Application</span>
+          </div>
+          <p class="text-lg leading-relaxed text-foreground lg:text-xl">
+            这些对<span class="text-primary">现代智能出行</span>的体感与思考，将帮助我在斑马智行的座舱与车联网产品中，聚焦真实驾驶场景与用户价值。
+          </p>
+        </div>
+      </section>
+
+      <!-- Navigation -->
+      <nav class="flex items-center justify-between border-t border-border pt-10">
+        <a id="back-home" href="index.html" class="group inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground" data-dom-id="back-home">
+          <i data-lucide="arrow-left" class="h-4 w-4 transition-transform group-hover:-translate-x-1"></i>
+          返回首页
+        </a>
+        <a id="next-contact" href="contact.html" class="group inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:bg-primary/90 hover:shadow-[var(--glow-primary)]" data-dom-id="next-contact">
+          联系我
+          <i data-lucide="arrow-right" class="h-4 w-4 transition-transform group-hover:translate-x-1"></i>
+        </a>
+      </nav>
+    </main>
+  </div>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
